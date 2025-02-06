@@ -99,7 +99,7 @@ class _ListScreenState extends State<ListScreen> {
                   itemCount: boardData.length,
                   itemBuilder: (context, index) {
                     final board = Board.fromMap(boardData[index]);
-                    String id = board.id;
+                    String? id = board.id;
                     return GestureDetector(
                         onTap: () {
                           Navigator.pushReplacementNamed(context, '/board/read',
@@ -117,7 +117,7 @@ class _ListScreenState extends State<ListScreen> {
                                         context, '/board/update',
                                         arguments: id);
                                   } else if (value == "delete") {
-                                    _deleteConfirm(id);
+                                    _deleteConfirm(id!);
                                   }
                                 },
                                 icon: const Icon(Icons.more_vert),
